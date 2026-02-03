@@ -1,43 +1,55 @@
-Cancer Subtype Prediction from TCGA Gene Expression Data
-Project Overview
+# Cancer Subtype Prediction from TCGA Gene Expression Data
 
-This project implements an end-to-end machine learning pipeline to predict breast cancer subtypes using TCGA RNA-seq gene expression data. The focus is on interpretable models, feature selection, and biologically meaningful insights. The workflow is fully reproducible in Google Colab using Python and standard ML libraries.
+## Project Overview
 
-Features
+This project implements an end-to-end machine learning pipeline to predict breast cancer subtypes (Tumor vs Normal) using TCGA RNA-seq gene expression data. The focus is on model interpretability, feature selection, and biologically meaningful insights.
 
-Preprocessing of high-dimensional RNA-seq data (17,814 genes × 590 samples)
+The workflow is fully reproducible in Google Colab using Python and standard machine learning libraries.
 
-Missing value handling, log-transform, and variance filtering
+---
 
-Feature selection to identify top predictive genes
+## Key Features
 
-Classical ML models: Logistic Regression, Random Forest
+- Preprocessing of high-dimensional RNA-seq data (17,814 genes × 590 samples)
+- Missing value handling, log transformation, and normalization
+- Low-variance gene filtering
+- Feature selection to identify top predictive genes
+- Classical machine learning models:
+  - Logistic Regression
+  - Random Forest
+- Deep learning model:
+  - PyTorch feedforward neural network
+- Model evaluation using accuracy, precision, recall, F1-score, and confusion matrices
+- Visualization using PCA plots and heatmaps
+- Extraction and interpretation of genes contributing to subtype prediction
 
-PyTorch feedforward model for supervised classification
+---
 
-Visualization of results using PCA and heatmaps
+## Dataset
 
-Extraction of top genes contributing to subtype prediction
+Source: TCGA Breast Cancer (BC-TCGA)
 
-Evaluation with accuracy, precision, recall, F1-score, and confusion matrices
+Samples: 590 total  
+Tumor samples: 529  
+Normal samples: 61  
+Genes: 17,814  
+Labels: Tumor vs Normal  
 
-Dataset
+Challenges:
+- High dimensionality
+- Noisy biological data
+- Missing values
+- Class imbalance
 
-Source: TCGA Breast Cancer (BC-TCGA) dataset
+---
 
-Samples: 590 (529 tumor, 61 normal)
+## Installation
 
-Genes: 17,814
+Install required Python libraries in Google Colab or a local environment:
 
-Labels: Tumor vs Normal
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn torch
 
-Challenges: High dimensionality, noise, missing values
-
-Installation
-
-Install required Python libraries in Google Colab:
-
-!pip install pandas numpy scikit-learn matplotlib seaborn torch
 
 Usage
 
@@ -67,21 +79,15 @@ Top predictive genes: identified using feature importance
 
 PCA & heatmaps: clearly separate tumor and normal samples
 
-File Structure
 Cancer-Subtype-Prediction/
 │
+├── README.md
+├── Cancer_Subtype_Colab.ipynb
+├── data/
+│   ├── BC-TCGA-Normal.txt
+│   ├── BC-TCGA-Tumor.txt
+│   └── (additional datasets)
 
-├─ README.md                 # Project documentation
-
-├─ Cancer_Subtype_Colab.ipynb # Full Colab notebook with end-to-end pipeline
-
-├─ data/
-
-│   ├─ BC-TCGA-Normal.txt
-
-│   ├─ BC-TCGA-Tumor.txt
-
-│   └─ (other datasets)
 
 Future Work
 
