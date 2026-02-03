@@ -70,11 +70,17 @@ PCA & heatmaps: clearly separate tumor and normal samples
 File Structure
 Cancer-Subtype-Prediction/
 │
+
 ├─ README.md                 # Project documentation
+
 ├─ Cancer_Subtype_Colab.ipynb # Full Colab notebook with end-to-end pipeline
+
 ├─ data/
+
 │   ├─ BC-TCGA-Normal.txt
+
 │   ├─ BC-TCGA-Tumor.txt
+
 │   └─ (other datasets)
 
 Future Work
