@@ -45,40 +45,53 @@ Challenges:
 
 ## Installation
 
-Install required Python libraries in Google Colab or a local environment:
+Install the required Python libraries in **Google Colab** or a **local environment**:
 
 ```bash
 pip install pandas numpy scikit-learn matplotlib seaborn torch
+```
 
+## Usage
 
-Usage
+- Load the dataset (gene expression data and labels)
+- Preprocess the data:
+  - Handle missing and infinite values
+  - Log-transform expression values
+  - Normalize features
+  - Remove low-variance genes
+- Split the dataset into training and testing sets
+- Perform feature selection using:
+  - Variance filtering
+  - Model-based importance scores
+- Train machine learning models:
+  - Logistic Regression
+  - Random Forest
+  - PyTorch feedforward neural network
+- Evaluate models using:
+  - Accuracy
+  - Precision
+  - Recall
+  - F1-score
+  - Confusion matrices
+- Interpret results:
+  - Extract top predictive genes
+  - Visualize expression patterns using PCA and heatmaps
 
-Load the dataset (expression data and labels)
+---
 
-Preprocess data: handle missing values, log-transform, normalize, remove low-variance genes
+## Results
 
-Split into training and testing sets
+- **Random Forest:** 99% accuracy in Tumor vs Normal classification  
+- **Logistic Regression:** 88–95% accuracy depending on preprocessing  
+- **PyTorch Feedforward Model:** 95% accuracy  
+- **Top Predictive Genes:** Identified using feature importance methods  
+- **PCA & Heatmaps:** Clearly separate Tumor and Normal samples
 
-Feature selection using variance filtering and importance scores
+---
 
-Train models: Logistic Regression, Random Forest, PyTorch feedforward network
+## Project Structure
 
-Evaluate models using accuracy, precision, recall, F1-score, and confusion matrices
-
-Interpret results: extract top predictive genes and visualize expression patterns
-
-Results
-
-Random Forest: 99% accuracy in tumor vs normal classification
-
-Logistic Regression: 88–95% accuracy depending on preprocessing
-
-PyTorch feedforward model: 95% accuracy
-
-Top predictive genes: identified using feature importance
-
-PCA & heatmaps: clearly separate tumor and normal samples
-
+```text
 Cancer-Subtype-Prediction/
 │
 ├── README.md
@@ -87,12 +100,12 @@ Cancer-Subtype-Prediction/
 │   ├── BC-TCGA-Normal.txt
 │   ├── BC-TCGA-Tumor.txt
 │   └── (additional datasets)
+```
 
 
-Future Work
+## Future Work
 
-Extend to multi-omics datasets for improved subtype prediction
+- Extend the pipeline to multi-omics datasets for improved subtype prediction  
+- Integrate drug response or clinical outcome data  
+- Deploy the interpretable machine learning pipeline as a clinical decision support tool  
 
-Integrate drug response or clinical outcome data
-
-Deploy interpretable ML pipeline as a clinical decision support tool
